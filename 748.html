@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende a Programar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        header {
+            background-color: #24384de8;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgb(0, 255, 213);
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav {
+            background-color: #24384de8;          
+            text-align: center;
+            box-shadow: 0 2px 5px rgb(0, 255, 213);
+        }
+
+        nav a {
+            color: rgb(255, 255, 255);
+            padding: 15px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c;
+            transition: background-color 0.3s ease;
+        }
+
+        .content {
+            padding: 40px 20px;
+            max-width: 12000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #24384de8;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .tutorials {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tutorials div {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tutorials div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 255, 213, 0.466);
+        }
+
+        .tutorials div h3 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .tutorials div p {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .tutorials div a {
+            display: inline-block;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .tutorials div a:hover {
+            background-color: #0f6b59;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Sección de tutoriales */
+        .tutorial-view {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgb(0, 255, 213);
+        }
+
+        .tutorial-view.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explora el Mundo de la Programación</h1>
+        <p>¡Comienza a aprender los fundamentos de la programación hoy mismo!</p>
+    </header>
+
+    <nav>
+        <a href="#introduccion">Introducción</a>
+        <a href="#html">HTML</a>
+        <a href="#css">CSS</a>
+        <a href="#javascript">JavaScript</a>
+        <a href="#recursos">Recursos</a>
+    </nav>
+
+    <div class="content">
+        <section id="introduccion">
+            <h2>¿Qué es la programación?</h2>
+            <p>La programación es el proceso de escribir instrucciones para que una computadora realice tareas específicas. Aquí aprenderás cómo escribir código en varios lenguajes como HTML, CSS y JavaScript, los cuales son esenciales para crear páginas web interactivas y dinámicas.</p>
+        </section>
+
+        <section id="html">
+            <h2>Aprende HTML</h2>
+            <div class="tutorials">
+                <div>
+                    <h3>Introducción a HTML</h3>
+                    <p>HTML es el lenguaje básico para estructurar contenido en la web. Aprende cómo utilizar las etiquetas principales.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('html-tutorial-1')">Ver tutorial</a>
+                </div>
+                <div>
+                    <h3>Etiquetas HTML</h3>
+                    <p>Las etiquetas HTML son esenciales para dar formato a tu contenido web. Descubre cómo usarlas correctamente.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('html-tutorial-2')">Ver tutorial</a>
+                </div>
+                <div>
+                    <h3>Elementos HTML</h3>
+                    <p>Un elemento HTML es una unidad básica de la estructura de una página web. Está compuesto por:
+                        Una etiqueta de apertura, contenido y una etiqueta de cierre</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('html-tutorial-4')">Ver tutorial</a>
+                </div>
+                <div>
+                    <h3>Formularios HTML</h3>
+                    <p>Los formularios HTML permiten a los usuarios ingresar información en tu sitio web. Aprende a crearlos.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('html-tutorial-3')">Ver tutorial</a>
+                </div>
+            </div>
+            <div id="html-tutorial-1" class="tutorial-view">
+                <h3>Tutorial de Introducción a HTML</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fy8XjViEFoQ" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GnPALhDSleI" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+            <div id="html-tutorial-2" class="tutorial-view">
+                <h3>Tutorial de Etiquetas HTML</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fr6elsCC8mY?list=PLDJQhdsZMESf0dQx_PrgMXtd2CxkoyZTs&index=2" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+            <div id="html-tutorial-3" class="tutorial-view">
+                <h3>Tutorial de Formularios HTML</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZuFGEJ1itj0" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tpCOfg1FgPw" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/u1JRC24rUfk" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lbCKvORwegI" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RXS3esRlNK4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="html-tutorial-4" class="tutorial-view">
+                <h3>Tutorial Elementos HTML</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/fhWGKNQ5KVY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
+        </section>
+
+        <section id="css">
+            <h2>Aprende CSS</h2>
+            <div class="tutorials">
+                <div>
+                    <h3>Introducción a CSS</h3>
+                    <p>CSS se utiliza para darle estilo a las páginas web. Cambia colores, fuentes y más para mejorar la apariencia.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('css-tutorial-1')">Ver tutorial</a>
+                </div>
+                <div>
+                    <h3>Diseño Responsivo</h3>
+                    <p>Haz que tu sitio web se vea bien en cualquier dispositivo con CSS. Aprende a crear diseños responsivos.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('css-tutorial-2')">Ver tutorial</a>
+                </div>
+                <div>
+                    <h3>Posicionamiento en CSS</h3>
+                    <p>Controla cómo se posicionan los elementos en tu página web con CSS. Aprende las técnicas más usadas.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('css-tutorial-3')">Ver tutorial</a>
+                </div>
+            </div>
+            <div id="css-tutorial-1" class="tutorial-view">
+                <h3>Tutorial de Introducción a CSS</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2-UCIaiQydY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="css-tutorial-2" class="tutorial-view">
+                <h3>Tutorial de Diseño Responsivo</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yneuaVjotO8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="css-tutorial-3" class="tutorial-view">
+                <h3>Tutorial de Posicionamiento en CSS</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/MdwfVyLrOJQ?list=PLROIqh_5RZeBkO3ibSKbEsKAxt0wW8upf&index=1" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+        </section>
+
+        <section id="javascript">
+            <h2>Aprende JavaScript</h2>
+            <div class="tutorials">
+                <div>
+                    <h3>Introducción a JavaScript</h3>
+                    <p>JavaScript es un lenguaje de programación que permite hacer sitios web interactivos. Aprende sus fundamentos.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('js-tutorial-1')">Ver tutorial</a>
+                </div>
+                <div>
+                    <h3>Funciones en JavaScript</h3>
+                    <p>Las funciones permiten reutilizar código en JavaScript. Aprende cómo escribir y usar funciones en tus proyectos.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('js-tutorial-2')">Ver tutorial</a>
+                </div>
+                <div>
+                    <h3>Eventos en JavaScript</h3>
+                    <p>Los eventos permiten que tu página web reaccione a las acciones del usuario. Aprende a manejarlos.</p>
+                    <a href="javascript:void(0);" onclick="showTutorial('js-tutorial-3')">Ver tutorial</a>
+                </div>
+            </div>
+            <div id="js-tutorial-1" class="tutorial-view">
+                <h3>Tutorial de Introducción a JavaScript</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yn8nQjocX2g" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="js-tutorial-2" class="tutorial-view">
+                <h3>Tutorial de Funciones en JavaScript</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RHffA2EvkOY" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="js-tutorial-3" class="tutorial-view">
+                <h3>Tutorial de Eventos en JavaScript</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/griNhCfEIOM" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="recursos">
+            <h2>Recursos Adicionales</h2>
+            <p>Si deseas profundizar más en la programación, aquí tienes algunos recursos útiles:</p>
+            <ul>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+                <li><a href="https://developer.mozilla.org/es/" target="_blank">MDN Web Docs</a></li>
+                <li><a href="https://www.freecodecamp.org/" target="_blank">FreeCodeCamp</a></li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Aprende a Programar - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Mostrar el tutorial correspondiente
+        function showTutorial(tutorialId) {
+    const tutorials = document.querySelectorAll('.tutorial-view');
+    tutorials.forEach(tutorial => {
+        if (tutorial.id === tutorialId) {
+            tutorial.classList.toggle('active'); // muestra/oculta
+        } else {
+            tutorial.classList.remove('active'); // oculta los otros
+        }
+    });
+}
+    </script>
+</body>
+</html>
